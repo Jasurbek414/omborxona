@@ -9,8 +9,8 @@ const Pagess = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home/>} exact />
         <Route path="/login" element={<Loginpage/>} />
+        <Route path="/" element={<Home/>} exact />
         <Route path="/project" element={<Project/>} />
       </Routes>
     </>

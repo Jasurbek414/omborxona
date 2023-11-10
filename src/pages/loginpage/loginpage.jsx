@@ -1,51 +1,35 @@
-import React from 'react';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBRow,
-  MDBCol,
-  MDBInput,
-  MDBCheckbox
-}
-from 'mdb-react-ui-kit';
+import React, { useState } from "react";
+import "./Loginpage.css";
 
-function Loginpage() {
+const LoginForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <MDBContainer className='my-5'>
-      <MDBCard>
-
-        <MDBRow className='g-0 d-flex align-items-center'>
-
-          <MDBCol md='4'>
-            <MDBCardImage src='./icons/sklad.png' alt='phone' className='rounded-t-5 rounded-tr-lg-0' fluid />
-          </MDBCol>
-
-          <MDBCol md='8'>
-
-            <MDBCardBody>
-
-              <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email'/>
-              <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password'/>
-
-              <div className="d-flex justify-content-between mx-4 mb-4">
-                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-                <a href="!#">Forgot password?</a>
-              </div>
-
-              <MDBBtn className="mb-4 w-100">Sign in</MDBBtn>
-
-            </MDBCardBody>
-
-          </MDBCol>
-
-        </MDBRow>
-
-      </MDBCard>
-    </MDBContainer>
+    <div id="login-form">
+      <h1>Login</h1>
+      <form>
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <label htmlFor="password">Password:</label>
+        <div className="password-input">
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            name="password"
+          />
+          <i
+            className={`toggle-password ${showPassword ? "fa fa-eye-slash" : "fa fa-eye"}`}
+            onClick={togglePasswordVisibility}
+          ></i>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
   );
-}
+};
 
-export default Loginpage;
+export default LoginForm;

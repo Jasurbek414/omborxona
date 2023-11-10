@@ -1,0 +1,10 @@
+.chart-cont{
+  width: 90%;
+  height: 90vh;
+  background-color: beige;
+  box-shadow: 19px 22px 124px 22px rgba(0,0,0,0.74);
+-webkit-box-shadow: 19px 22px 124px 22px rgba(0,0,0,0.74);
+-moz-box-shadow: 19px 22px 124px 22px rgba(0,0,0,0.74);
+margin: 10px 10px 0px 10px;
+
+}
